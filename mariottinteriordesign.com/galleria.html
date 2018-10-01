@@ -1,0 +1,123 @@
+<html>
+<script type="text/javascript" src="js/stdHead.js"></script>
+<head>
+</head>
+<style>
+table.center {
+	margin-left:auto; 
+	margin-right:auto;
+	margin-top:80px;
+  }
+table.center1 {
+	margin-left:auto; 
+	margin-right:auto;
+	margin-top:60px;
+  }
+td, tr {
+	text-align: center;
+	}
+img.clsGalleria {
+	border:4px groove white;
+	width: 450px;
+	height: 300px;
+	}
+td.clsSepara {
+	width: 120px;
+}
+td.clsTxtTD {
+	border: 1px solid #020202;
+	font-size:200%;
+	color:#EEE;
+	background:#CDA560;
+	}
+</style>
+
+<script language="javascript" type="text/javascript">
+var arrLngGall = [
+	["Arredi interni", "Interior furnishings"],
+	["Arredi esterni", "Outdoor furniture"],
+	["Progetti interni", "Interior projects"],
+	["Progetti esterni", "Outdoor projects"]
+	];
+    var numLng = getCookieLng();
+</script>
+
+<body>
+	<table class="center">
+	<tr>
+		<td class="clsTxtTD" id="idGallAI"></td>
+		<td class="clsSepara"></td>
+		<td class="clsTxtTD" id="idGallAE"></td>
+	</tr>
+	<tr>
+		<td>
+			<a href="javascript:;" onclick="return openVideo('lAhY-qW4XK8') ">
+			<img src="galleria/gallarrint.jpg" class="clsGalleria" alt="Galleria arredi interni" title="Galleria arredi interni" border="0" />
+			</a>
+		</td>
+		<td class="clsSepara"></td>
+		<td>
+			<a href="javascript:;" onclick="return openVideo('SFGpGaHTK6g') ">
+			<img src="galleria/gallarrest.jpg" class="clsGalleria" alt="Galleria arredi esterni" title="Galleria arredi esterni" border="0" />
+			</a>
+		</td>
+	</tr>
+	</table>
+
+	<table class="center1">
+	<tr>
+		<td class="clsTxtTD" id="idGallPI"></td>
+		<td class="clsSepara"></td>
+		<td class="clsTxtTD" id="idGallPE"></td>
+	</tr>
+	<tr>
+		<td>
+			<a href="javascript:;" onclick="return openVideo('iyPMeAJb97Q') ">
+			<img src="galleria/gallproint.jpg" class="clsGalleria" alt="Galleria progetti interni" title="Galleria progetti interni" border="0" />
+			</a>
+		</td>
+		<td class="clsSepara"></td>
+		<td>
+			<a href="javascript:;" onclick="return openVideo('3zFrREUIkBw') ">
+			<img src="galleria/gallproest.jpg" class="clsGalleria" alt="Galleria progetti esterni" title="Galleria progetti esterni" border="0" />
+			</a>
+		</td>
+	</tr>
+	</table>
+	
+	<div id="video" style="padding: 2px; position: absolute; top:50px; background-color: #f0f0f0; visibility: hidden; border: solid; border-width: 1px;">
+		<div style="text-align: right;">
+		 	<a href="javascript:;" onclick="return popClose(); return false;"><img src='img/exit.png' width=20px height=20px></a
+		</div>
+		<iframe id="youtube_player" class="yt_player_iframe" frameborder="1" allowscriptaccess="always" ></iframe>'
+		<script>
+			var video = document.getElementById('video').style;
+			var youtube = document.getElementById('youtube_player');
+			var h = window.innerHeight * 0.9;
+			var w = h / 3 * 4;
+
+			video.height = h + 20;
+			video.width = w;
+			video.left = (window.innerWidth - w) / 2;			
+
+			youtube.width = w - 4;
+			youtube.height = h - 4;
+			
+			function popClose() {
+				video.visibility = "hidden";
+				youtube.src = '';
+			}
+			function openVideo(myParam) {
+				video.visibility = "visible";
+				youtube.src = 'http://www.youtube.com/embed/' + myParam + '?rel=0&autoplay=1&enablejsapi=1';
+			}
+
+	document.getElementById('idGallAI').innerHTML  = arrLngGall[0][numLng];
+	document.getElementById('idGallAE').innerHTML  = arrLngGall[1][numLng];
+	document.getElementById('idGallPI').innerHTML  = arrLngGall[2][numLng];
+	document.getElementById('idGallPE').innerHTML  = arrLngGall[3][numLng];
+
+		</script>
+	</div>
+</body>
+</html>

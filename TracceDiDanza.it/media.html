@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <script type="text/javascript" src="script/header.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+
+    <script>
+        let max = 116;
+        header();
+
+    </script>
+
+    <style>
+        .picsSlide img,
+        .startSpan img {
+            border-style: solid;
+            border-width: 2px;
+            border-radius: 10px;
+            border-color: rgb(184, 115, 51);
+        }
+
+        .picsSlide {
+            position: relative;
+            width: 100%;
+            margin: auto;
+            text-align: center;
+        }
+
+        .picsSlide>* {
+            position: absolute;
+            top: 0;
+        }
+
+        #videoYutube {
+            float: left;
+            padding: 10px;
+        }
+
+    </style>
+
+    <script>
+        $(function() {
+            let wDic = $('.picsSlide').width() / 2;
+            let hWin = $(window.top).height() - 80;
+            $('.picsSlide').css('height', hWin);
+            $('.picsSlide img').css('height', hWin);
+
+            let w = $('.picsSlide > :first-child').width() / 2;
+            $('.picsSlide > :first-child').css('left', wDic - w);
+
+
+            $(document).ready(function() {
+                $('span.startSpan').hide()
+                var tmpImg = new Image();
+                tmpImg.src = $('.startImg').attr('src');
+                tmpImg.onload = function() {
+                    $('span.startSpan').show()
+                    let w = hWin / $('.startImg').height() * $('.startImg').width() / 2;
+                    let left = $(window.top).width() / 2 - w;
+                    $('.startImg').css('height', hWin);
+                    $('.startImg').css('left', left);
+
+                };
+
+                setTimeout(function() {
+                    $('span.startSpan').remove()
+                }, 3000);
+            });
+
+
+            $('.picsSlide > :gt(0)').hide();
+            setInterval(function() {
+                $('.picsSlide > :first-child').fadeOut().next().fadeIn().end().appendTo('.picsSlide');
+
+                let w = $('.picsSlide > :first-child').width() / 2;
+                $('.picsSlide > :first-child').css('left', wDic - w);
+
+
+            }, 3000);
+        });
+
+    </script>
+
+</head>
+
+<body>
+    <script>
+        pagina(2);
+        window.scrollTo(0, 0);
+        let random = Math.floor((Math.random() * max) + 1);
+
+        function pad(num, size) {
+            var s = "000" + num;
+            return s.substr(s.length - size);
+        }
+
+    </script>
+    <div id="container">
+        <section id="foto">
+            <span class="startSpan" style="position: absolute">
+                <script>
+                    var name = 'img/media/' + pad(random, 3) + '.jpg';
+                    let z = '<img class="startImg" style="position: absolute" src="' + name + '" />';
+                    document.write(z);
+
+                </script>
+            </span>
+            <div class="picsSlide">
+                <script>
+                    var pic = '';
+                    for (i = 1; i <= max; i++) {
+                        var n = random + i;
+                        if (n > max) {
+                            n -= max;
+                        }
+                        var num = pad(n, 3);
+                        //                        let name = 'http://www.traccedidanza.it/img/media/' + num + '.jpg'
+                        name = 'img/media/' + num + '.jpg'
+                        pic += '<a href="' + name + '"><img src="' + name + '" title="Foto ( ' + num + ' )" /></a>'
+                    }
+                    document.write(pic);
+
+                </script>
+            </div>
+
+        </section>
+
+        <br><br>
+
+        <div class="titolopagina">
+            <h1>
+                Video
+            </h1>
+        </div>
+
+        <section id="section_video" style="width: 780px; margin: auto;">
+            <script>
+                var array = [
+                    "JyGUcwMdJ6s",
+                    "hS3Ghd9OdZE",
+                    "HzDzJ9fEwJo",
+                    "_fnN0TeiSF8",
+                    "lGYI-gYUkpY",
+                    "YjazSj5Evns",
+                ]
+
+                function video(id) {
+                    var html = '<iframe id="videoYutube" src="http://www.youtube.com/embed/' + id +
+                        '?rel=0&autoplay=0&enablejsapi=1" width="240px" height="180px" frameborder="0" allowfullscreen></iframe>';
+                    document.write(html);
+                }
+                for (i = 0; i < array.length; i++) {
+                    video(array[i]);
+                }
+                var h = Math.floor((array.length + 2) / 3) * 240
+                document.getElementById('section_video').style.height = h - 80 + 'px'
+
+            </script>
+        </section>
+        <div style="margin: auto;">
+            <h2 style="text-align: center;">... e per altri video vai alla nostra pagina YouTube !!! - ... and for more videos go to our page YouTube !!!
+            </h2>
+        </div>
+
+    </div>
+    <script>
+        bottom();
+
+    </script>
+
+</body>
+
+</html>

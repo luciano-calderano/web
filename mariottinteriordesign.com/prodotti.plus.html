@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Mariotti - Textile Creation</title>
+<meta name="description" content="Produzione di tessuti per arredamento di abitazioni, uffici ed alberghi. Production of fabrics for the decoration of houses, offices, hotels.">
+<meta name="keywords" content="tessuto,tessuti,arredamento,design,elegante,tapezzeria,fabrics,interior design,elegant home decoration">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script type="text/javascript" src="js/stdHead.js"></script>
+<script type="text/javascript" src="js/jpgList.js"></script>
+<script>
+	var prod = dicProdItem.prod;
+	var dicProd = {
+		"Isowall Plus" : {
+			"path" : "prodotti/Isowall Plus/",
+			"pathHead" : "ambientate/",
+			"pathBody" : "campionario/",
+			"array" : [
+				"Sirmione",				
+				"Venaria Reale",
+				"Agata",
+				"Asburgo",
+				"Dalia",
+				"Duchessa",
+				"Ekaterina",
+				"Elegance",
+				"Eleonora",
+				"Eloise",
+				"Favorita",
+				"Florida",
+				"Garden",
+				"Giava",
+				"Ginevra",
+				"Impero",
+				"Josephine",
+				"Madame",
+				"Mantova",
+				"Marilyn",
+				"Matilde",
+				"Murano",
+				"Orleans",
+				"Prestige",
+				"Stendhal",
+				"Taormina",
+				"Urbino",
+				"Versailles",
+				"Villa Reale",
+				//"Toscana",
+			],
+			"Descri" : getDesc("Isowall Plus"),
+		},
+	}
+	var dic = dicProd[prod];
+	var pathJpg = dic.path;
+	var arrListProd = dic.array;
+</script>
+
+<style>
+#contenitore {
+	margin-top: 40px;
+	margin-left: 120px;
+	margin-right: 120px;
+	height: auto;
+}
+
+#tableHeader {
+	width: 50%;
+	border-width: 1px;
+	border-color: #cccccc;
+	text-align: center;
+	margin: auto;
+	padding: 5px;
+	margin-top: 10px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div id="contenitore">
+	<h3><script>document.write (prod);</script></h3>
+	<hr>
+	<h1><script>document.write (dic.Descri);</script></h1>
+	<hr>
+</div>
+	<table id="tableHeader" width="60%">
+		<script>
+			var maxInRow = 4;
+			var posInRow = 0;
+
+			for (var i = 0; i < arrListProd.length; i++) {
+				var prodName = arrListProd[i];
+				file = prodName + '/' + dic.pathHead;
+
+				var arrSelected = getJpgList(file);
+				if (arrSelected.length == 0) {
+					continue;
+				}
+				file = arrSelected[0];
+
+				if (posInRow == 0) {
+					document.write ('<tr>');
+				}
+				document.write ('<td style="padding:4px; width: 25%">');
+				document.write ('<img class="imageSub" style="cursor: pointer; height: auto; width: 200px; display:block" src="' + file + '" title="' + arrListProd[i] + '" alt="' + prodName + '"  border="0">');
+				//document.write ('<img onclick="imgClicked(' + (n + 3) + '); return false;" class="imageScheda" style="cursor: pointer; height: 180px; width: auto; display:block" src="' + arrImages[n] + '" title="' + dicProdItem.item + '" border="0"></a>');
+
+				
+				document.write ('<div style="position:relative; width: 200px; bottom:0;margin-top:-20px;background-color:#444444;color:#FFFFFF;">');
+				document.write ('<h2>' + prodName + '</>');
+				document.write ('</td>');
+			//alert (file);
+				if (posInRow < maxInRow - 1) {
+					posInRow++;
+				}
+				else {
+					document.write ('</tr>');
+					posInRow = 0;
+				}
+			}
+			document.write ('</tr>');
+			
+			$(function () {
+				$('img.imageSub').on('click', function () {
+                //    document.getElementById("prod").value = dicProdItem.prod;
+                //    document.getElementById("item").value = this.alt;
+                //    document.input.submit();
+				    window.open ('prodotti.plus.scheda.html?item=' + this.alt + '&prod=' + dicProdItem.prod, '_self', false);	
+				});
+			});
+		
+		</script>
+	</table>
+	<hr>
+</div>
+	
+<form name="input" action="prodotti.plus.scheda.html" method="GET">
+<input type="hidden" value="" id="prod" name="prod" />
+<input type="hidden" value="" id="item" name="item" />
+</form>
+    
+</body>
+</html>

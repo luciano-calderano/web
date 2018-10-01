@@ -1,0 +1,82 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="description" content="Mariotti si distingue per la ricercatezza dei dettagli, la progettazione e la messa in opera dei propri tessuti, divenendo un riferimento nel panorama nazionale dei tessuti Contract per l'arredamento." />
+<meta name="keywords" content="Mariotti,tessuti,tessuto,campionario,tessile,contract,fibre,arredamento,collezione,rivestimento,jacquard,antifiamma,classe 1,ignifugo,trevira,stock,lampasso,damasco,immaginarte,stampe,cad/cam,tradizione" />
+    
+<script type="text/javascript" src="js/stdHead.js"></script>
+<script>
+    arrTxt = [
+        '<b>Mariotti Interior Design</b><br> \
+         e\' azienda in costante crescita.<br> \
+         Se vuoi lavorare con noi,<br> \
+         inviaci il tuo curriculum in formato .doc o in formato .pdf all\'indirizzo:<br><br> \
+<a class="mail" href="mailto:info@mariottinteriordesign.com">info@mariottinteriordesign.com</a><br><br> \
+         Il CV verrà inserito nel nostro database.<br> \
+         Se si apriranno posizioni in linea con la tua esperienza professionale, ti contatteremo.<br><br> \
+	     <small>Le ricerche sono volte a candidati di entrambi i sessi, legge 903/77</small>',
+        '<b>Mariotti Interior Design</b><br>\
+         is a company in constant growth. <br> \
+         If you want to work with us, <br> \
+         send your CV in .doc or .pdf format at: <br><br> \
+<a class="mail" href="mailto:info@mariottinteriordesign.com">info@mariottinteriordesign.com</a><br><br> \
+         CV will be placed in our database. <br> \
+         When we will open positions in line with your professional experience, we will contact you.<br><br> \
+         <small>The research is aimed at candidates of both genders, Law 903/77</small>'
+    ];
+</script>
+</head>
+<style>
+#tblGalleria {
+    margin-top:80; 
+    margin-left:auto; 
+    margin-right:auto;
+	width:80%;
+  }
+img.clsGalleria {
+	border:4px groove white;
+	width: 80%;
+	}
+td.tdGalleria {
+	text-align: center;
+	font-size:150%;
+	color:#222222;
+	width:50%;
+	}
+a.mail {
+	font-size:80%;
+	color:#444;
+}
+</style>
+
+<body>
+<table id="tblGalleria">
+<tr>
+	<td class="tdGalleria"><img class="clsGalleria" src="Img/lavoraconnoi.jpg"/></td>
+	<td class="tdGalleria">
+	<hr>
+    <script>
+    	var numLng = getCookie (cookieLng);
+        document.write (arrTxt[numLng]);
+    </script>
+    <br><hr>	
+	<div hidden=Yes>
+	<p>Se vuoi lavorare con noi, inviaci il tuo curriculum in formato .doc o in formato .pdf compilando il form qui sotto.</p>
+	<p>Il CV verrà inserito nel nostro database e, se si apriranno posizioni in linea con la tua esperienza professionale, ti contatteremo.</p>
+	<p>Le ricerche sono volte a candidati di entrambi i sessi, legge 903/77</p>
+	Invia il tuo Curriculum Vitae
+	<form action="sendemail.php" method="post" enctype="text/plain">
+	Nome e cognome:<br><input type="text" name="Nm" value=""><br>
+	Telefono:<br><input type="text" name="Tl" value=""><br>
+	E-mail:<br><input type="text" name="Em" value=""><br>
+	Note:<br><textarea cols="40" rows="5" name="Nt" value="" size="50"></textarea><br><br>
+	<input type="file" name="cv" size="40" value="1" /><br>
+	<input type="submit" value="Send"><input type="reset" value="Reset">
+	</form>
+	</div>
+       </td>
+</tr>
+</table>  
+</body>
+</html>
+

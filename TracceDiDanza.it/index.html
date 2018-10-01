@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <script type="text/javascript" src="script/header.js"></script>
+    <script type="text/javascript" src="script/jquery.js"></script>
+    <script type="text/javascript" src="script/jquery.fadeImg.js"></script>
+    <script>
+        header();
+
+    </script>
+    <script>
+        $(document).ready(function($) {
+            $(".slide").fadeImages({
+                time: 3000,
+                arrows: true,
+                complete: function() {
+                    console.log("Fade Images Complete");
+                }
+            });
+        });
+
+    </script>
+    <style>
+        .wrap {
+            max-width: 500px;
+            margin: 0px auto;
+            height: 340px;
+        }
+
+        .slide {
+            width: 480px;
+            height: 320px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0px 0px 10px 10px rgb(128, 128, 128);
+/*            box-shadow: 0px 0px 10px 10px dimgray;*/
+        }
+
+        .slide ul {
+            margin: 0 auto;
+            height: 382px;
+            cursor: pointer;
+        }
+
+        .slide ul li {
+            width: 100%;
+            list-style: none;
+            position: absolute;
+            z-index: 1;
+            height: 400px;
+            background-position: top center;
+            top: 0;
+            left: 0;
+            right: 0;
+        }
+
+        .slide #dots {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 10px;
+            height: 30px;
+            z-index: 9999;
+            font-size: 0;
+            text-align: center;
+            opacity: 0.6;
+        }
+
+        .slide #dots a {
+            background: #FFD700;
+            margin: 0 6px;
+            width: 8px;
+            height: 8px;
+            box-shadow: 0 0 1px 0 #333;
+            border-radius: 100%;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .slide #dots a.active {
+            background: #FFF;
+        }
+
+        .slide .arrow:active {
+            background: #FAFAFA;
+            opacity: 1;
+        }
+
+    </style>
+</head>
+
+<body>
+    <script type="text/javascript" src="script/header.js"></script>
+    <script>
+        pagina(0);
+        $(window).load(function() {
+            $(".loader").fadeOut("slow");
+        })
+
+    </script>
+    <div class="loader"></div>
+    <div id="container">
+
+        <div class="wrap">
+            <div class="slide">
+                <script>
+                    var pic = '<ul>';
+                    for (i = 0; i < 10; i++) {
+                        pic += '<li style="background-image:url(img/home/' + i + '.jpg"></li>';
+                    }
+                    pic += '</ul>';
+                    document.write(pic);
+
+                </script>
+            </div>
+        </div>
+
+        <table>
+            <tbody>
+                <tr>
+                    <td id="indexRight">
+                        <div id="header">Chi siamo</div><br>
+                        <div id="text">
+                            Siamo un gruppo di danzatori di provata esperienza, appassionati di danze storiche, che amano eseguire in costume d'epoca le danze di societa' di tradizione ottocentesca.<br><br>
+                            Lo scopo dell'associazione <b>TRACCE DI DANZA </b>e' quello di rievocare le intense atmosfere di una festa a palazzo imperiale, di un te' danzante di fine secolo, di far rivivere e diffondere il clima di gentilezza e nobilta' dei comportamenti.<br><br>
+                            Attraverso il ballo, si ricrea un luogo d'incontro per condividere un piacere collettivo nell'atmosfera del passato, vivendo sulle musiche di Strauss e Verdi, un <b>sogno romantico</b>. <br><br> L'Associazione offre la possibilita' di frequentre dei corsi di danze storiche dell'800 proponendo lo studio e l'esecuzione di: <b>Valzer, Quadriglie, Contraddanze, Polka e Mazurke.</b>
+                        </div>
+                    </td>
+                    <td id="indexRight">
+                        <div id="header">Who we are</div><br>
+                        <div id="text">
+                            We are a group of extremely experienced classical dancers, who love to perform in traditional 19th century costumes.<br><br>
+                            The purpose of the association <b>TRACES OF DANCE</b> is to enable the participants to relive the refined elegance of past noble days and to celebrate at the imperial palace with a dance and tea as well as to recreate the end of two centuries ago.<br><br>
+                            Therefore to partake in a mutual interest, for a wonderful atmosphere of music, by J.Strauss and G.Verdi, as so to create a <b>romantic dream</b>.<br><br>
+                            The association makes it possible to frequent these historical 19th century classes and purposes in the studio with performances of <b>Valzer, Quadriglie, Contraddanze, Polke and Mazurke.</b>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <br>
+    <br>
+    <br>
+    <script>
+        bottom();
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Mariotti - Textile Creation</title>
+<meta name="description" content="Produzione di tessuti per arredamento di abitazioni, uffici ed alberghi. Production of fabrics for the decoration of houses, offices, hotels.">
+<meta name="keywords" content="tessuto,tessuti,arredamento,design,elegante,tapezzeria,fabrics,interior design,elegant home decoration">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script type="text/javascript" src="js/stdHead.js"></script>
+<script type="text/javascript" src="js/jpgList.js"></script>
+
+<script>
+	var pdfScheda = "schede/Isowall scheda tecnica.pdf";
+	var toFind = '/' + dicProdItem.item + '/';
+	var arrImagesFull = getJpgList (toFind);
+    var file;
+    
+    file = dicProdItem.item + "/ambientate/";
+    var arrImgAmb = $.grep(arrImagesFull, function(s) { return s.match(file) })
+
+    file = dicProdItem.item + "/campionario/";
+	var arrImgCam = $.grep(arrImagesFull, function(s) { return s.match(file) })
+
+    arrImagesFull = arrImgAmb.concat(arrImgCam); 
+    
+    var dicDescPlus = {
+        "Sirmione" : [ "Tessuto murale altezza 295 cm" , "Tessuto murale altezza 295 cm" ],				
+        "Venaria Reale" : [ "Tessuto murale altezza 295 cm" , "Tessuto murale altezza 295 cm" ],
+        "Agata" : [ "Tessuto murale altezza 295 cm" , "Tessuto murale altezza 295 cm" ],
+        "Asburgo" : [ "Tessuto murale altezza 295 cm" , "Tessuto murale altezza 295 cm" ],
+        "Dalia" : [ "Tessuto murale altezza 295 cm" , "Tessuto murale altezza 295 cm" ],
+        "Duchessa" : [ "Tessuto murale altezza 295 cm" , "Tessuto murale altezza 295 cm" ],
+        "Ekaterina" : [ "Tessuto murale altezza 295 cm" , "Tessuto murale altezza 295 cm" ],
+        "Elegance" : [ "Tessuto murale altezza 295 cm" , "Tessuto murale altezza 295 cm" ],
+        "Eleonora" : [ "Tessuto murale altezza 295 cm" , "Tessuto murale altezza 295 cm" ],
+        "Eloise" : [ "Tessuto murale altezza 295 cm" , "Tessuto murale altezza 295 cm" ],
+        "Favorita" : [ "Tessuto murale altezza 295 cm" , "Tessuto murale altezza 295 cm" ],
+        "Florida" : [ "Tessuto murale altezza 295 cm" , "Tessuto murale altezza 295 cm" ],
+        "Garden" : [ "Tessuto murale altezza 295 cm" , "Tessuto murale altezza 295 cm" ],
+        "Giava" : [ "Tessuto murale altezza 295 cm" , "Tessuto murale altezza 295 cm" ],
+        "Ginevra" : [ "Tessuto murale altezza 295 cm" , "Tessuto murale altezza 295 cm" ],
+        "Impero" : [ "Tessuto murale altezza 295 cm" , "Tessuto murale altezza 295 cm" ],
+        "Josephine" : [ "Tessuto murale altezza 295 cm" , "Tessuto murale altezza 295 cm" ],
+        "Madame" : [ "Tessuto murale altezza 295 cm" , "Tessuto murale altezza 295 cm" ],
+        "Mantova" : [ "Tessuto murale altezza 295 cm" , "Tessuto murale altezza 295 cm" ],
+        "Marilyn" : [ "Tessuto murale altezza 295 cm" , "Tessuto murale altezza 295 cm" ],
+        "Matilde" : [ "Tessuto murale altezza 295 cm" , "Tessuto murale altezza 295 cm" ],
+        "Murano" : [ "Tessuto murale altezza 295 cm" , "Tessuto murale altezza 295 cm" ],
+        "Orleans" : [ "Tessuto murale altezza 295 cm" , "Tessuto murale altezza 295 cm" ],
+        "Prestige" : [ "Tessuto murale altezza 295 cm" , "Tessuto murale altezza 295 cm" ],
+        "Stendhal" : [ "Tessuto murale altezza 295 cm" , "Tessuto murale altezza 295 cm" ],
+        "Taormina" : [ "Tessuto murale altezza 295 cm" , "Tessuto murale altezza 295 cm" ],
+        "Urbino" : [ "Tessuto murale altezza 295 cm" , "Tessuto murale altezza 295 cm" ],
+        "Versailles" : [ "Tessuto murale altezza 295 cm" , "Tessuto murale altezza 295 cm" ],
+        "Villa Reale" : [ "Tessuto murale altezza 295 cm" , "Tessuto murale altezza 295 cm" ],
+        //"Toscana" : [ "Tessuto murale altezza 295 cm" , "Tessuto murale altezza 295 cm" ],
+    }
+    var desc = dicDescPlus[dicProdItem.item][0];
+</script>
+<style>
+.footer {
+	margin-top:15px;
+	margin-bottom:15px;
+	font-size:14px;
+	font-weight:bold;
+	color:#333333;
+    text-align: center
+}
+
+#contenitore {
+	margin-top: 35px;
+	margin-left: 120px;
+	margin-right: 120px;
+	height: 300px;
+}
+
+#lcCarousel {
+	margin-top: 5px;
+	margin-left: 120px;
+	margin-right: 120px;
+	height: 0px;
+	background-color: #f0f0f0;
+	border: solid;
+	border-width: 1px;
+	border-color: #777777;
+}
+#tableHeader {
+	width: auto;
+	border-width: 1px;
+	border-color: #cccccc;
+	text-align: center;
+	margin: auto;
+	padding: 5px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div id="contenitore">
+	<table id="tableHeader">
+		<tr>
+			<td width="40px">
+				<img onclick=back(); style="height:32px; width: 32px;" src="Img/back.png"></img>'
+			</td>
+			<td width="auto" style="text-align: center;">
+				<script>document.write ('<h3>' + dicProdItem.item + '</>');</script>
+			</td>
+			<td width="40px">
+				<a href="schede/Isowall scheda tecnica.pdf"><img style="height:32px; width: 32px;" src="Img/icoInfo.png"></img></a>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			</td>
+			<td width="auto" style="text-align: center;">
+				<script>document.write ('<h1>' + desc + '</>');</script>
+			</td>
+			<td>
+			</td>
+		</tr>
+	</table>
+	<hr>
+	<table id="tableHeader">
+		<tr>
+			<script>
+				for (var n = 0; n < arrImgAmb.length; n++) {
+					document.write ('<td style="padding:10px; cursor: pointer;">');
+					document.write ('<a href="' + arrImgAmb[n] + '" class="popup" rel="' + dicProdItem.item + '">');
+					document.write ('<img onclick="imgClicked(' + n + '); return false;" style="height:200px; width:auto ; display:block" src="' + arrImgAmb[n] + '"></a>');
+					document.write ('</td>');
+				}				
+			</script>
+		</tr>
+	</table>
+	<hr>
+</div>
+<br><br>
+
+<div id="lcCarousel" style="margin-top: 120px;">
+    <div style="position: relative; float: right; left: 0px; top: 0px; height: 32px; width: 32px; cursor: pointer;">
+        <img class="icoClose" src="img/icoClose.png"></img>
+    </div>
+    <div style="position: relative; float: left; left: -118px; top: 50%; height: 48px; width: 48px; cursor: pointer;">
+        <img class="icoPrev" src="img/icoPrev.png"></img>
+    </div>
+    <div style="position: relative; float: right; left: 150px; top:50%; height: 48px; width: 48px; cursor: pointer;">
+        <img class="icoNext" src="img/icoNext.png"></img>
+    </div>
+    <img id="imgSelected" style="position:relative;" src="img/exit.png"></img>
+</div>
+
+<div id="contenitore">
+	<table id="tableHeader" style="margin-top: 120px;">
+		<tr>
+			<script>
+			var numero;
+			var maxInRow = 4;
+			var posInRow = 0;
+
+			for (var n = 0; n < arrImgCam.length; n++) {
+				if (posInRow == 0) {
+					document.write ('<tr>');
+				}
+				document.write ('\
+                    <td style="padding:4px; width: 200px; height:180px; align:center"> \
+                        <img onclick="imgClicked(' + (n + 3) + '); return false;" \
+                            title="' + dicProdItem.item + '" \
+                            src="' + arrImgCam[n] + '" \
+                            style="height:auto; width:200px ; display:block"/> \
+                    </td>');
+				if (posInRow < maxInRow - 1) {
+					posInRow++;
+				}
+				else {
+					document.write ('</tr>');
+					posInRow = 0;
+				}
+			}
+		  </script>
+		</tr>
+	</table>
+	<hr>
+    <div class="footer">
+        MARIOTTI Interior Design. Via Monte Fumaiolo, 20. 00139 Roma - Italia. Tel: +39 06 87193147. Fax: +39 06 87193147
+    </div>
+</div>
+
+<script>
+    $('#lcCarousel').height(0);
+	$('#lcCarousel').hide();
+	$("html, body").animate({ scrollTop: "0px" });
+    
+    function showImg() {
+        $('#imgSelected').attr("src", arrImagesFull[numero]);
+        $('#imgSelected').height($('#lcCarousel').height() - 4);
+        var w = $('#imgSelected').width();
+        var h = $('#imgSelected').height();
+        var hDiv = $('#lcCarousel').height() - 4;
+        var wDiv = $('#lcCarousel').width();
+        var diff = hDiv / h;
+        var wImg = w * diff;
+        var left = (wDiv - wImg) / 2;
+        $('#imgSelected').css({ 'top': '2px', 'width' : 'auto', 'left': + left + 'px', });					
+    }
+
+    function imgClicked(args) {
+        $('#lcCarousel').height($(window).height() - 55);
+        $('#lcCarousel').show();
+        var topCarousel = ($("#lcCarousel").offset().top - 45) + "px";
+        $("html, body").animate({ scrollTop: topCarousel });
+        numero = parseInt(args);
+        showImg()
+    };
+
+    $(function () {
+        $('img.icoClose').on('click', function () {
+            $('#lcCarousel').height(0);
+            $('#lcCarousel').hide();
+            $("html, body").animate({ scrollTop: "0px" });
+        });
+
+        $('img.icoNext').on('click', function () {
+            numero++;
+            if (numero >= arrImagesFull.length) {
+                numero = 0;
+            }
+            showImg();
+        });
+        $('img.icoPrev').on('click', function () {
+            numero--;
+            if (numero < 0) {
+                numero = arrImagesFull.length - 1;
+            }
+            showImg();
+         });
+    });
+
+    function back() {
+	    window.open ('prodotti.plus.html?prod=' + dicProdItem.prod, '_self', false);	
+	}
+</script>
+
+</body>
+</html>	

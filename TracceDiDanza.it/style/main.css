@@ -1,0 +1,178 @@
+  body {
+      margin: auto;
+      font-family: "Snell Roundhand", "Savoye LET", Arial, sans-serif;
+      background-image: url(../img/bkg.jpg);
+      background-repeat: repeat;
+      background-attachment: fixed;
+      color: #160563;
+  }
+
+  #imgLogo {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 100px;
+      border: 1px solid #160563;
+      z-index: 99;
+  }
+
+  div.social {
+      position: fixed;
+      right: 0px;
+      top: 0px;
+      width: 90px;
+      height: 40px;
+
+      z-index: 99;
+      background-color: #160563;
+      border-bottom: 5px solid #FFD700;
+  }
+
+  div.social img {
+      width: 32px;
+      height: 32px;
+      padding-left: 4px;
+      padding-top: 4px;
+  }
+
+  ul#menu {
+      position: fixed;
+      top: 0px;
+      left: 102px;
+      right: 90px;
+      height: 40px;
+      font-size: 22px;
+      margin: 0 auto;
+      padding: 0;
+      list-style: none;
+      white-space: nowrap;
+      z-index: 99;
+  }
+
+  ul#menu li {
+      background-color: #160563;
+      border-bottom: 5px solid #FFD700;
+      display: block;
+      height: 100%;
+      margin: 0px;
+      float: left;
+      width: 16.66%;
+  }
+
+  ul#menu li a {
+      color: #fff;
+      display: block;
+      font-weight: bold;
+      line-height: 40px;
+      text-decoration: none;
+      height: 100%;
+      text-align: center;
+  }
+
+  ul#menu li.active,
+  ul#menu li:hover {
+      background-color: #FFD700;
+      border-bottom: 5px solid #160563;
+  }
+
+  #container {
+      margin: auto;
+      width: 95%;
+      padding-top: 20px;
+  }
+
+  #title {
+      text-align: center;
+      font-size: 64pt;
+      font-weight: bold;
+      padding-top: 1.0cm;
+  }
+
+  #subtitle {
+      text-align: center;
+      font-size: 26pt;
+      font-weight: bold;
+      padding-bottom: 50px;
+  }
+
+  h1 {
+      font-size: 32px;
+      font-style: italic;
+      text-align: center;
+      font-weight: bold;
+      opacity: 1;
+  }
+
+  h2 {
+      font-size: 20px;
+      text-align: justify;
+      font-weight: normal;
+      padding-left: 100px;
+      padding-right: 100px;
+      font-family: Times, Arial, sans-serif;
+      font-style: italic;
+  }
+
+  #header {
+      text-align: center;
+      font-size: 28px;
+      font-weight: bold;
+  }
+
+  #text {
+      text-align: justify;
+      font-family: Times, Arial, sans-serif;
+      font-size: 20px;
+      font-weight: normal;
+      font-style: italic;
+      padding-left: 20px;
+      padding-right: 20px;
+  }
+
+  #bottom {
+      text-align: center;
+      font-family: Times, Arial, sans-serif;
+      font-size: 14px;
+      font-weight: normal;
+      width: 100%;
+  }
+
+  table {
+      margin: auto;
+      text-align: center;
+      width: 100%;
+      border-spacing: 3;
+  }
+
+  td#indexRight {
+      width: 480px;
+      padding-left: 10px;
+      vertical-align: top;
+
+  }
+
+  td#indexLeft {
+      vertical-align: top;
+      padding-top: 40px;
+  }
+
+  .loader {
+      position: fixed;
+      left: 0px;
+      top: 0px;
+      width: 100%;
+      height: 100%;
+      z-index: 9999;
+      background: url('../img/loader.gif') 50% 50% no-repeat #FFD700;
+      opacity: 0.1
+  }
+
+  #circle {
+      width: 4px;
+      height: 4px;
+      -webkit-border-radius: 2px;
+      -moz-border-radius: 2px;
+      border-radius: 2px;
+      background: #160563;
+      margin: auto;
+  }

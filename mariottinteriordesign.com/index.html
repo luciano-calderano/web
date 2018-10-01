@@ -1,0 +1,61 @@
+<html>
+<head>
+<script type="text/javascript" src="js/stdHead.js"></script>
+<script type="text/javascript" src="slider.prodotti/slideshow.js"></script>
+<style>
+#slideshow {
+    margin-top: 50px;
+    margin-left: 100px;
+    margin-right: 100px;
+    height: 85%;
+  //  border: 1px solid #002c53;
+}
+
+#imgslide {
+    border: 1px solid #000;
+   // width: auto;
+    height: auto;
+}
+#divSubTitle {
+    margin-bottom: 20px;
+    margin-left: 100px;
+    margin-right: 100px;
+    height: auto;
+    text-align: center;
+    border: 1px solid #002c53;
+    background-color: #ce7500;
+    font-size: 24px;
+    color: white;
+    padding: 10px;
+}
+</style>
+</head>
+
+<body>
+    
+<div id="slideshow">
+	<img id="imgslide" src="Img/img01.jpg" title="Arredi interni / Interior furnising" />
+	<img id="imgslide" src="Img/img02.jpg" title="Arredi interni / Interior furnising" />
+	<img id="imgslide" src="Img/img03.jpg" title="Arredi interni / Interior furnising" />
+	<img id="imgslide" src="Img/img04.jpg" title="Arredi interni / Interior furnising" />
+	<img id="imgslide" src="Img/img05.jpg" title="Arredi interni / Interior furnising" />
+	<img id="imgslide" src="Img/img06.jpg" title="Progetti interni / Interior projects" />
+	<img id="imgslide" src="Img/img07.jpg" title="Arredi esterni / Gardens" />
+	<img id="imgslide" src="Img/img08.jpg" title="Arredi esterni / Gardens" />
+	<img id="imgslide" src="Img/img09.jpg" title="Progetti esterni / Outdoor projects" />
+	<img id="imgslide" src="Img/img10.jpg" title="Progetti esterni / Outdoor projects" />
+</div>
+<div id="divSubTitle">
+</div>
+
+
+<script>
+    document.getElementById("slideshow").height = 200;
+  //  alert(document.getElementById("imgslide").width);
+    document.getElementById("imgslide").width = document.getElementById("slideshow").width;
+// dir /s /b /o:gn *.jpg > jpg.txt
+//    alert(document.getElementById("imgslide").width);
+</script>
+
+</body>
+</html>

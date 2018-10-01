@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Mariotti - Textile Creation</title>
+<meta name="description" content="Produzione di tessuti per arredamento di abitazioni, uffici ed alberghi. Production of fabrics for the decoration of houses, offices, hotels.">
+<meta name="keywords" content="tessuto,tessuti,arredamento,design,elegante,tapezzeria,fabrics,interior design,elegant home decoration">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script type="text/javascript" src="js/stdHead.js"></script>
+<script type="text/javascript" src="js/jpgList.js"></script>
+<script type="text/javascript" src="js/dicDesc.js"></script>
+
+<link href="crop/jquery.drag-n-crop.css" rel="stylesheet" type="text/css">
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+<script src="crop/imagesloaded.js"></script>
+<script src="crop/jquery.drag-n-crop.js"></script>
+
+<script>
+	var prod = dicProdItem.prod; //localStorage.getItem('prod');
+	var item = dicProdItem.item; //localStorage.getItem('item');
+    var desc = getDesc (item);
+    var toFind = '/' + item + '/';
+	var arrImagesFull = getJpgList (toFind);
+    
+	var numero;
+	var maxInRow = 4;
+	var posInRow = 0;
+	var arrImages = $.grep(arrImagesFull, function(s) { return s.match(item + "/") })
+
+    var itemShowDesc = 0;
+    var imgSlide = '';
+    var arrSlides = $.grep(arrImages, function(s) { return s.match(item + "/slides") })
+    if (arrSlides.length > 0)
+        imgSlide = arrSlides[0];
+    
+    var i = arrImages.length - 1;
+    while (i > 0) {
+        var s = arrImages[i];
+        if (arrImages[i].indexOf("slides") > -1) {
+            arrImages.splice (i, 1);
+        }
+        i--;
+    }
+    
+    switch (item) {
+        case 'Isowall Hotel' :
+            itemShowDesc = 2;
+            desc = "";
+            var dicdesc = {
+                "Signac"        : 'Paul Signac, "Harbour at Marseilles" (1906)<br>Sizes: 200 cms x 305 cms',
+                "Planisfero"    : 'Antique Map of the world<br>Sizes: 200 cms x 300 cms',
+                "Fumetto"       : 'Comic Strip<br>Sizes: 200 cms x 305 cms',
+                "Gesso"         : 'Bassorilievo<br>Sizes: 200 cms x 400 cms',
+                "Manhattan"     : 'New York Subway<br>Sizes: 200 cms x 300 cms',
+                "New York"      : 'Brooklyn Bridge, New York<br>Sizes: 200 cms x 330 cms',
+                "Derain"        : 'André Derain, "Il Porto" (1905)<br>Sizes: 200 cms x 300 cms',
+                "Astratto"      : 'Abstract Flower<br>Sizes: 200 cms x 390 cms',
+                "La Scala"      : 'La Scala Theater, Milano<br>Sizes: 200 cms x 353 cms',
+            };
+        break;
+        case 'Isowall Acqueforti' :
+            itemShowDesc = 1;
+        break;
+    }
+</script>
+<style>
+	
+#lcCarousel {
+	margin-top: 5px;
+	margin-left: 120px;
+	margin-right: 120px;
+	height: 0px;
+	background-color: #f0f0f0;
+	border: solid;
+	border-width: 1px;
+	border-color: #777777;
+}
+    
+	
+#divBanner {
+	margin-top: 5px;
+	margin-left: 120px;
+	margin-right: 120px;
+	height: 0px;
+}
+#contenitore {
+	margin-top: 30px;
+	margin-left: 120px;
+	margin-right: 120px;
+	height: auto;
+}
+
+#tableHeader {
+	width: auto;
+	border-width: 1px;
+	border-color: #cccccc;
+	text-align: center;
+	margin: auto;
+	padding: 5px;
+}
+
+#tableAcqF {
+	width: auto;
+	border-width: 1px;
+	border-color: #cccccc;
+	text-align: center;
+	margin: auto;
+	padding: 5px;
+}
+
+img.crop {
+    margin: 5px;
+    border: 1px solid #c99;
+	max-width: 200%;
+}
+.textScheda {
+	font-family: Times New Roman;
+}
+
+.footer {
+	margin-bottom:15px;
+	font-size:14px;
+	font-weight:bold;
+	color:#333333;
+    text-align: center
+}
+
+</style>
+
+</head>
+
+<body>
+<div id="contenitore">
+    <div id="divBanner" style="height: 1px;">
+    	<img id="imgBanner" style="position:relative; text-align:center; " src=""></img>
+    </div>
+</div>
+<div id="contenitore">
+	<br>
+	<hr>		
+	<div style="position: relative; float: left; left: 0px; top: 8px;">
+		<script>document.write ('<a href="#" onclick=window.history.back();><img style="height: 32px; width: 32px;" src="Img/back.png" ></img></a>');</script>
+	</div>
+	<div style="margin-top:0px; text-align: center; ">
+		<script>
+            var itemDesc = item;
+            if (prod.length > 0) {
+                itemDesc = prod + " / " + item;
+            }
+            document.write ('<h3 class="textScheda">' + itemDesc + '</h3>');
+        </script>
+	</div>
+	<div style="margin-top:20px">
+		<script>
+            document.write ('<h1 class="textScheda" style="text-align: center;">' + desc + '</h1>');
+        </script>
+	</div>
+	<hr>
+</div>
+
+<div id="lcCarousel" style="height: 1px;">
+	<div style="position: relative; float: right; left: -4px; top: 4px;  cursor: pointer;">
+		<img class="icoClose" style="height: 32px; width: 32px;" src="Img/icoClose.png"></img>
+	</div>
+	<div style="position: relative; float: left; left: -118px; top: 50%; cursor: pointer;">
+		<img class="icoPrev" style="height: 40px; width: 40px;" src="Img/icoPrev.png"></img>
+	</div>
+	<div style="position: relative; float: right; left: 150px; top:50%; cursor: pointer;">
+		<img class="icoNext" style="height: 40px; width: 40px;" src="Img/icoNext.png"></img>
+	</div>
+	<img id="imgSelected" style="position:relative;" src=""></img>
+</div>
+
+<div id="contenitore" style="">
+	<table id="tableHeader">
+		<script>
+			for (var n = 0; n < arrImages.length; n++) {
+				if (posInRow == 0) {
+					document.write ('<tr>');
+				}
+                if (itemShowDesc == 0) {
+				    document.write (' \
+                    <td style="padding:4px;"> \
+				        <div style="width: 200px; height:250px"> \
+                            <img onclick="imgClicked(' + n + '); return false;" src="' + arrImages[n] + '" class="crop" /> \
+                        </div> \
+				    </td> \
+                    ');
+                }
+                else {
+                    var filePathName = arrImages[n];
+                    var arrFileName = filePathName.split("/");
+                    var fileName = arrFileName[arrFileName.length - 1];
+                    var arrName = fileName.split(".");
+                    var itemFinalDesc = arrName[0];
+                    if (itemShowDesc == 2) {
+                        itemFinalDesc = dicdesc[itemFinalDesc];
+                    }
+				    document.write (' \
+                    <td style="padding:4px;"> \
+                        <table id="tableAcqF"><tr><td><div style="width: 200px; height:200px; align:center"> \
+                          <img onclick="imgClicked(' + n + '); return false;" src="' + arrImages[n] + '" class="crop" /> \
+                        </div></td></tr><tr><td width="200px" height="80px"><h1>' + itemFinalDesc + '\
+                       </h1></td></tr></table> \
+				    </td> \
+                    ');
+                }
+				if (posInRow < maxInRow - 1) {
+					posInRow++;
+				}
+				else {
+					document.write ('</tr>');
+					posInRow = 0;
+				}
+			}
+		</script>
+		</tr>
+	</table>
+<hr>
+</div>
+		<div class="footer">MARIOTTI Interior Design. Via Monte Fumaiolo, 20. 00139 Roma - Italia. Tel: +39 06 87193147. Fax: +39 06 87193147 </div>
+		</div>
+
+<script>
+    function showDivBanner() {
+		$('#divBanner').hide();
+        if (imgSlide == "")
+            return;
+        $('#divBanner').height('auto');
+		$('#divBanner').show();
+		$('#imgBanner').attr("src", imgSlide);
+	};
+
+    showDivBanner();
+	$('img.crop').dragncrop();
+
+	$('#lcCarousel').height(0);
+	$('#lcCarousel').hide();
+	$("html, body").animate({ scrollTop: "0px" });
+	
+	function showImg() {
+		$('#imgSelected').attr("src", arrImages[numero]);
+		$('#imgSelected').height($('#lcCarousel').height() - 4);
+		var w = $('#imgSelected').width();
+		var h = $('#imgSelected').height();
+		var hDiv = $('#lcCarousel').height() - 4;
+		var wDiv = $('#lcCarousel').width();
+		var diff = hDiv / h;
+		var wImg = w * diff;
+		var left = (wDiv - wImg) / 2;
+		$('#imgSelected').css({ 'top': '2px', 'width' : 'auto', 'left': + left + 'px', });					
+	}
+	
+	function imgClicked(args) {
+		$('#lcCarousel').height($(window).height() - 55);
+		$('#lcCarousel').show();
+		var topCarousel = ($("#lcCarousel").offset().top - 45) + "px";
+		$("html, body").animate({ scrollTop: topCarousel });
+		numero = parseInt(args);
+		showImg()
+	};
+
+
+	$(function () {
+		$('img.icoClose').on('click', function () {
+			$('#lcCarousel').height(0);
+			$('#lcCarousel').hide();
+			$("html, body").animate({ scrollTop: "0px" });
+		});
+		
+		$('img.icoNext').on('click', function () {
+			numero++;
+			if (numero >= arrImages.length) {
+				numero = 0;
+			}
+			showImg();
+		});
+		$('img.icoPrev').on('click', function () {
+			numero--;
+			if (numero < 0) {
+				numero = arrImages.length - 1;
+			}
+			showImg();
+		 });
+	});
+</script>
+
+</body>
+</html>	

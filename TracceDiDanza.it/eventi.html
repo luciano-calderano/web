@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <script type="text/javascript" src="script/header.js"></script>
+</head>
+<style>
+    #anno {
+        font-size: 48px;
+        font-weight: bold;
+        text-align: left;
+        width: 80%;
+        margin: auto;
+    }
+
+    div.evento {
+        font-family: Times, Arial, sans-serif;
+        font-size: 32px;
+        font-weight: bold;
+        font-style: italic;
+        text-align: center;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    div.evento #datiEvento {
+        font-size: 20px;
+        font-weight: normal;
+    }
+
+</style>
+
+</html>
+
+<body>
+    <script>
+        pagina(3);
+
+        function anno(year) {
+            var html = '<br><div id="anno">' + year + '</div><hr style="width: 80%; margin: auto">';
+            document.write(html);
+
+        }
+
+        function evento(title) {
+            var array = title.split("|");
+            var html = '';
+            html += '<div class="evento">' + array[0];
+            html += '<div id="datiEvento">' + array[1];
+            if (array.length > 2) {
+                html += '<br>' + array[2]
+            }
+            html += '</div></div>';
+            html += '<div id="circle"></div>';
+            document.write(html);
+        }
+
+    </script>
+
+    <div id="container">
+        <script>
+            anno(2018);
+            evento("Maxi lezione delle danze ottocentesche|Teatro Giovanni Paolo|Domenica 7 Ottobre,ore 16/19")
+			evento("Gran ballo della Castelluccia|Castello della Castelluccia|Venerdì 15 Giugno. Orario: 19.00");
+			evento("Matinée dansante avec déjeuner|Agriturismo ‘Il Borgo ad Ariccia’|Sabato 19 Maggio. Orario: 10/13.00");
+			evento("STAGE ’800|Roma|Domenica 18 Marzo. Orario: 10/13.00 con pranzo");
+            evento("Gran ballo di Carnevale|Castello di Lunghezza - Roma|Sabato 10 Febbraio 2018");
+            evento("Tè danzante|Roma|Domenica 7 Gennaio 2018");
+
+            anno(2017);
+            evento("Tè danzante di Natale|Roma|Venerdì 15 Dicembre 2017");
+            evento("STAGE|Roma|Domenica 12 Novembre 2017. Ore 10/13");
+            evento("GRAN BALLO DEL DECENNALE|Villa Giovanelli Fogaccia - Roma|Sabato 28 Ottobre 2017 ore 19.00/24.30");
+            evento("GRAN BALLO D'ESTATE|Castello Orsini-Nerola|Domenica 25 Giugno 2017 ore 19.00/24.30");
+            evento("Tè danzante '800|Roma|Sabato 13 Maggio 2017 ore 17/20");
+            evento("STAGE '800 augurale di Pasqua|Roma|Domenica 2 Aprile 2017 ore 10 / 13");
+            evento("STAGE '800|Roma|Domenica 12 Marzo 2017 orario 10 / 13");
+            evento("BAL COSTUME|'Carnevale al castello' - Castello di Lunghezza|Sabato 25 Febbraio 2017 ore 19.00");
+            evento("STAGE|Roma|Domenica 29 Gennaio 2017 ore 10.00 / 13.00");
+            evento("Tè danzante|Auditorium Giovanni Paolo - Roma|Domenica 8 Gennaio 2017 ore 16.00 / 19.00");
+
+            anno(2016);
+            evento("FRAMMENTI dell'800 ASPETTANDO IL NUOVO ANNO|Terme Francescane village - Spello|Sabato 31 Dicembre 2016 ore 20.00");
+            evento("Tè danzante di NATALE|Roma|Sabato 17 Dicembre 2016 ore 17.00");
+            evento("GRAN BALLO D'AUTUNNO|Hotel Columbus - Roma|Sabato 15 Ottobre 2016 ore 19.00");
+            evento("Spettacolo e partecipazione al concerto operistico|Roma|lunedì 20 Giugno 2016 ore 17.00");
+            evento("GRAN BALLO NELLA LAGUNA|Venezia|Sabato 11 Giugno 2016 ore 19.00");
+            evento("MAXI LEZIONE|Roma|Sabato 7 Maggio 2016 ore 16.30 / 19.30");
+            evento("Tè danzante|Roma|Sabato 30 Aprile 2016 ore 16.30 / 19.30");
+            evento("'STAGE'|Roma|Sabato 5 Marzo 2016 ore 10.00 / 13.00");
+            evento("'STAGE'|Roma|Sabato 23 Gennaio 2016 ore 10.00 / 13.00");
+            evento("Spettacolo ' LA TRAVIATA '|Sala Baldini - Roma|Martedì 19 Gennaio 2016 ore 18.00");
+            evento("GRAN BALLO DI CARNEVALE|Villa del Cardinale Sabato 6 Febbraio 2016 ore 19.00");
+            evento("Tè danzante|Teatro S.Giovanni e Paolo(ROMA)|Domenica 10 Gennaio 2016 ore 16.00 / 19.00");
+
+            anno(2015);
+            evento("GRAN BALLO &quot;SULLE ALI DELL' OTTOCENTO|Borgo Piave(LT)|Giovedì 03 Dicembre 2015 alle ore 19.00");
+            evento("STAGE '800|Sabato 17 Ottobre 2015 dalle ore 10.00 alle ore 13.00");
+            evento("GRAN BAL EN ETE|Terme Francescane - Village, Spello|Sabato 27 Giugno 2015 ore 19");
+            evento("SPETTACOLO AL 'FORUM'|ROMA|Venerdì 19 Giugno 2015 ore 19.30");
+            evento("Tè danzante|Sala Pio IX alle ore 19|Domenica 31 Maggio 2015 ore 16");
+            evento("SPETTACOLO 'LA TRAVIATA '|Sala Baldini ore 18|Domenica 04 Aprile 2015");
+            evento("Stage di danze '800|28 Marzo 2015");
+            evento("BALLO DEGLI USSARI|Sala Pio IX alle ore 19|Sabato 28 Febbraio 2015");
+            evento("Stage di danze ‘800|17 Gennaio 2015");
+            evento("UNA NOTTE AL CASTELLO|Castello di Lunghezza|Sabato 10 Gennaio 2015");
+            evento("Tè danzante|Teatro Giovanni Paolo, Roma|Domenica 4 Gennaio 2015 alle ore 16");
+
+            anno(2014);
+
+            evento("Ballo di Natale a corte|Castello di Lunghezza|Sabato 13 Dicembre 2014 alle ore 19");
+            evento("Stage di danze ‘800|15 Novembre 2014");
+            evento("Spettacolo 'il gatto con gli stivali'|Domenica 19 Ottobre 2014 ore 16");
+            evento("Stage di danze ‘800|4 Ottobre 2014");
+            evento("GRAN BAL DU LAC (Gran ballo '800)|Terme Francescane, Spello(PG) Sabato 24 Maggio 2014");
+            evento("Una finestra su due mondi dal melodramma all'operetta|Terme Francescane Village, Spello(PG) martedì 22 Aprile 2014");
+            evento("Gran ballo di San Valentino|Palazzo Baronale, Torrita Tiberina Sabato 8 Febbraio 2014");
+
+            anno(2013);
+            evento("Stage di danze ‘800|20 dicembre 2013");
+            evento("BALLO di NATALE|Roma|Sabato 7 Dicembre 2013");
+            evento("Stage di danze '800|10 Ottobre 2013");
+            evento("Spettacolo - 'Un'Estate al castello'|Borgo Sabotino(LT)|Venerdì 5 luglio 2013");
+            evento("Spettacolo - Dall 'Aia al Gran Ballo'|Terme Francescane, Spello - Sabato 15 Giugno 2013");
+            evento("Festa di corte|Villa Guglielmi, Fiumicino - Domenica 14 aprile 2013");
+            evento("Tè danzante|Sala Pio IX, Roma - Sabato 13 aprile 2013");
+            evento("Spettacolo 'Il Profumo della Musica '|Palazzo Ducale, Genova - Sabato 16 marzo 2013");
+            evento("Stage di danze ‘800|03 marzo 2013");
+            evento("Gran Galà d'Hiver - Palazzo ottocentesco, Roma|Sabato 16 febbraio 2013");
+            evento("Befana del Poliziotto - L'Oasi, Roma|Domenica 06 gennaio 2013");
+            evento("Un cuore per tutti, tutti per un cuore|Hotel Sheraton, Roma|Sabato 5 gennaio 2013");
+
+            anno(2012);
+            evento("Spettacolo 1860|Terme Francescane, Spello - Venerdi 28 dicembre 2012");
+            evento("Stage di danze 800|16 Dicembre 2012");
+            evento("Stage di danze 800|18 Dicembre 2012");
+            evento("Ballo d'Autunno, circolo uff.li M.M. Napoli|Sabato 13 ottobre 2012");
+            evento("Spettacolo al 'Forum', per l 'associazione Donne in movimento|Giovedi 21 giugno 2012");
+            evento("Galà d'estate|Villa Savorgnan de Brazzà - Sabato 30 giugno 2012");
+            evento("Ballo delle rose|Locanda del Castello - Roccasecca(FR) - Sabato 5 maggio 2012");
+            evento("Ballo delle Mimose|Spello - Sabato 10 marzo 2012");
+
+            anno(2011);
+            evento("Capodanno'800, Spello|Sabato 31 dicembre 2011");
+            evento("Tè danzante nel Risorgimento, Teatro Giovanni Paolo,Roma|Domenica 11 dicembre 2011");
+            evento("Ballo di Natale|Sabato 10 dicembre 2011");
+            evento("Spettacolo nei salotti culturali di Aprilia|2 ottobre 2011");
+            evento("Gran ballo di carnevale Italiano|Venerdì 4 marzo ore 19.00 - Presso Villa Savorgnan Di Brazzà");
+            evento("Aspettando San Valentino|Sabato 12 febbraio 2011");
+            evento("Tè danzante|16 gennaio 2011");
+
+            anno(2010);
+            evento("Spettacolo nel salotto culturale del comune di Aprilia|2 ottobre 2010");
+            evento("Spettacolo nel parco Shuster|28 giugno 2010");
+            evento("Gran ballo delle camelie|5 giugno 2010");
+            evento("Te' danzante di Primavera|Domenica 21 marzo 2010");
+            evento("Gran ballo di carnevale villa Savorgnan di Brazza'|Sabato 13 febbraio 2010");
+            evento("Befana del poliziotto|Atlantico|Mercoledi 06 gennaio 2010");
+            evento("Festa dei LIONS|Hotel Enea Pomezia|Giovedi 17 dicembre 2009");
+
+
+            anno(2009);
+            evento("Festa a villa Spada|Sabato 05 dicembre 2009");
+            evento("Palazzo delle associazioni regionali|Partecipazione all'evento nel palazzo delle associazioni regionali|Giugno 2009");
+            evento("Festa della Repubblica|L'Aquila|Martedi 2 giugno 2009");
+            evento("Ballo dei Fiori Festa di primavera'|Sabato 16 maggio 2009");
+            evento("Befana del poliziotto|PalaFilkam - Ostia|6 gennaio 2009");
+
+            anno(2008);
+            evento("Inaugurazione Sala da Ballo 'Il Canneto'|Borgo Sabotino - Latina|27 settembre 2008");
+            evento("Studi televisivi 'Teleobiettivo'|Ospiti nel 'Salotto della musica '|26 settembre 2008");
+            evento("Ballo di Carnevale|Domenica 8 febbraio 2009");
+            evento("Festa della Donna|Museo storico dell'Aeronautica Aeroporto militare di 'Vigna di Valle' - Bracciano|8 marzo 2008");
+            evento("Befana del poliziotto|PalaFilkam - Ostia|6 gennaio 2008");
+
+        </script>
+
+        <script>
+            bottom();
+
+        </script>
+
+</body>
+
+</html>

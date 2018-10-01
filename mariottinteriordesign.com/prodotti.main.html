@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Mariotti - Textile Creation</title>
+<meta name="description" content="Produzione di tessuti per arredamento di abitazioni, uffici ed alberghi. Production of fabrics for the decoration of houses, offices, hotels.">
+<meta name="keywords" content="tessuto,tessuti,arredamento,design,elegante,tapezzeria,fabrics,interior design,elegant home decoration">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script type="text/javascript" src="js/stdHead.js"></script>
+<script type="text/javascript" src="js/jpgList.js"></script>
+<script type="text/javascript" src="js/dicDesc.js"></script>
+
+<link href="crop/jquery.drag-n-crop.css" rel="stylesheet" type="text/css">
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+<script src="crop/imagesloaded.js"></script>
+<script src="crop/jquery.drag-n-crop.js"></script>
+<script>
+//	var prod = localStorage.getItem('prod');
+	var dicProd = {
+		"Texwall Line" : {
+			"path" : "prodotti/Texwall-line/",
+			"array" : [
+				[ "Tiffany", "" ],
+				[ "Botticelli", "" ],				
+				[ "Bramante", "" ],
+				[ "Farnese", "" ],
+				[ "Florence", "" ],
+				[ "Grand Palais", "" ],
+				[ "Jewels", "" ],
+				[ "Montecarlo", "" ],
+				[ "Moulin Rouge", "" ],
+				[ "Raffaello", "" ],
+				[ "Roma", "" ],
+				[ "Royal", "" ],
+				[ "Sorrento", "" ],
+				[ "Varenna", "" ],
+				[ "Victoria", "" ],
+			],
+			"Descri" : getDesc ("Texwall"),
+			},
+		"Opera Luxury" : {
+			"path" : "prodotti/Opera Luxury Jacquard/",
+			"array" : [
+				[ "Garnier", "" ],				
+				[ "La Fenice", "" ],
+			],
+			"Descri" : getDesc ("Opera Luxury"),
+			},
+		"Contract" : {
+			"path" : "prodotti/Millennio Contract/",
+			"array" : [
+				[ "Agora", "" ],
+				[ "Alassio", "" ],
+				[ "Artemide", "" ],
+				[ "Carmen", "" ],
+				[ "Carrara", "" ],
+				[ "Casanova", "" ],
+				[ "Caserta", "" ],
+				[ "Cortina", "" ],
+				[ "Dolomiti", "" ],
+				[ "Elena", "" ],
+				[ "Ermitage", "" ],
+				[ "Fabiana", "" ],
+				[ "Holiday", "" ],
+				[ "Michelangelo", "" ],
+				[ "Mistral", "" ],
+				[ "Mozart", "" ],
+				[ "Palladio", "" ],
+				[ "Penelope", "" ],
+				[ "Reims", "" ],
+				[ "Renoir", "" ],
+				[ "Sabrina", "" ],
+				[ "Sibilla", "" ],
+				[ "Spring", "" ],
+				[ "Versilia", "" ],
+			],
+			"Descri" : getDesc ("Contract"),
+			},
+			"Immagin Arte" : {
+			"path" : "prodotti/Immagin Arte/",
+			"array" : [
+				[ "Animals", "" ],
+				[ "Classics", "" ],
+				[ "Ethnic", "" ],
+				[ "Graphics", "" ],
+				[ "Kids", "" ],
+				[ "Landscapes", "" ],
+				[ "Nature", "" ],
+				[ "People", "" ],
+				[ "Sacred", "" ],
+				[ "Sport", "" ],
+				[ "Vintage", "" ],
+				[ "Altre", "" ],
+			],
+			"Descri" : getDesc ("Immagin Arte"),
+			},
+	} 
+	var dic = dicProd[dicProdItem.prod];
+	var pathJpg = dic.path;
+	var arrListProd = dic.array;
+</script>
+
+<script>
+	var prod = dicProdItem.prod; //localStorage.getItem('prod');
+	var item = dicProdItem.item; //localStorage.getItem('item');
+	var desc = dicProdItem.desc; //localStorage.getItem('desc');
+	var toFind = '/' + item + '/';
+	var arrImagesFull = getJpgList (toFind);
+	var numero;
+	var maxInRow = 4;
+	var posInRow = 0;
+	var file = item + "/";
+	var arrImages = $.grep(arrImagesFull, function(s) { return s.match(file) })
+</script>
+<style>
+	
+#lcCarousel {
+	margin-top: 5px;
+	margin-left: 120px;
+	margin-right: 120px;
+	height: 0px;
+	background-color: #f0f0f0;
+	border: solid;
+	border-width: 1px;
+	border-color: #777777;
+}
+#contenitore {
+	margin-top: 30px;
+	margin-left: 120px;
+	margin-right: 120px;
+	height: auto;
+}
+
+#tableHeader {
+	width: auto;
+	border-width: 1px;
+	border-color: #cccccc;
+	text-align: center;
+	margin: auto;
+	padding: 5px;
+}
+
+img.crop {
+    border: 1px solid #c99;
+	max-width: 200%;
+}
+.textScheda {
+	font-family: Times New Roman;
+}
+
+</style>
+</head>
+
+<body>
+<div id="contenitore">
+	<br>
+	<hr>		
+	<div style="margin-top:0px; text-align: center; ">
+		<script>document.write ('<h3 class="textScheda">' + prod + '</h3>');</script>
+	</div>
+	<div style="margin-top:20px">
+		<script>document.write ('<h1 class="textScheda">' + dic.Descri + '</h1>');</script>
+	</div>
+	<hr>
+</div>
+
+<div id="contenitore">
+	<table id="tableHeader">
+		
+		<script>
+			maxInRow = 4;
+			posInRow = 0;
+			for (var i = 0; i < arrListProd.length; i++) {
+				var prodName = arrListProd[i][0];
+				file = prodName + '/';
+
+				var arrSelected = getJpgList(file);
+				if (arrSelected.length == 0) {
+					continue;
+				}
+				file = arrSelected[0];
+				if (posInRow == 0) {
+					document.write ('<tr>');
+				}
+				document.write ('<td>');
+				document.write ('<div style="width: 200px; height:250px; cursor: pointer; "> \
+								<img onclick=openScheda(' + i + '); return false;" \
+								class="crop" \
+								title="' + arrListProd[i][1] + '" \
+								alt="' + prodName + '" \
+								src="' + file + '"/> \
+								</div>');
+				document.write ('<div style="position:relative; bottom:0; margin-top:-36px; background-color:rgba(0, 0, 0, 0.6);">');
+				document.write ('<h2>' + prodName + '</h2>');
+				document.write ('</div>');
+
+				document.write ('</td>');
+
+				if (posInRow < maxInRow - 1) {
+					posInRow++;
+				}
+				else {
+					document.write ('</tr>');
+					posInRow = 0;
+				}
+			}
+		</script>
+		</tr>
+	</table>
+
+</div>
+
+<script>
+	$('img.crop').dragncrop();
+		function openScheda(args) {
+		var arr = arrListProd[args];
+		window.localStorage.setItem("item", arr[0]);
+		window.localStorage.setItem("desc", arr[1]);
+		window.open ('prodotti.main.scheda.html?prod=' + dicProdItem.prod + '&item=' + arr[0] ,'_self', false);	
+	}
+
+</script>
+
+</body>
+</html>	
